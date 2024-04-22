@@ -16,6 +16,12 @@ try:
 
         else:
 
+            empty_fields = [field for field, value in request.form.items() if not value]
+            if empty_fields:
+                error_message = "All fields are required. Please fill out the form completely."
+                return render_template('form.html', error_message=error_message)
+            
+
             data = CustomDataset(LIMIT_BAL=float(request.form.get('LIMIT_BAL')),
                                                 SEX=int(request.form.get('SEX')),
                                                 EDUCATION=int(request.form.get('EDUCATION')),
@@ -48,6 +54,8 @@ try:
         prediction = predict_pipeline.predict(final_data)
 
         result = prediction.tolist()
+
+
         if result[0] == 1:
             string = "The credit card holder will be Defaulter in the next month"
         else:

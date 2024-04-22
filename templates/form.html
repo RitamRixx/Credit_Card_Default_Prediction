@@ -79,10 +79,13 @@
     </header>
     <div class="predict">
         <form action="/" method="POST">
-            <!-- Error message section -->
+
+
             {% if error_message %}
             <p style="color: red;">{{ error_message }}</p>
             {% endif %}
+
+
 
             <div class="form-group">
                 <label for="MARRIAGE">MARITAL STATUS</label>
@@ -115,7 +118,7 @@
                 </select>
             </div>
 
-            <!-- Continue this pattern for values 4 to 23 -->
+            
             <div class="pay-group">
                 <label for="PAY">Repayment Status:</label>
 
@@ -323,3 +326,6 @@
     </div>
 </body>
 </html>
+
+
+
