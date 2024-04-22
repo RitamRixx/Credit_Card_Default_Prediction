@@ -4,8 +4,10 @@ scikit-learn==1.2.2
 ipykernel
 seaborn
 matplotlib
-
-
+Flask
+imblearn
+pymongo[srv]
+xgboost
 
 
 
